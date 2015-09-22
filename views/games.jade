@@ -1,0 +1,11 @@
+doctype html
+html(lang="en" ng-app="bewd.tictactoe.board")
+  head
+    include ./includes/bower_bootstrap.jade
+    title All the games!
+    
+  body
+    ul
+      each board in boards
+        li = board.id
+          a(href="/games/#{board.id}") Game ##{board.id}

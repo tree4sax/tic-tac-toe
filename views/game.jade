@@ -1,0 +1,84 @@
+//- doctype html
+//- html(lang="en" ng-app)
+//-   head
+//-     include ./includes/bower_bootstrap.jade
+//-     title Welcome #{username}
+//-     
+//-   //- body
+//-   //-   h1 Hi #{username}
+//-   //-   h2 Want to play a game?
+//-   //-   p #{something}
+//-   //-   div(ng-init="username = 'Hoppy'")
+//-   //-     p Username: {{ username }}
+//- 
+//-   //- body
+//-   //-   .container(ng-init="theAnswer = 47 - 5")
+//-   //-     h1 Hi #{username}
+//-   //-     h2 Want to play a game?
+//-   //- 
+//-   //-     p The answer is {{ theAnswer }}!!
+//-   //-   p The non-Angular answer is {{ theAnswer }}??  
+//-   //- 
+//-   //-     button(ng-click='theAnswer = theAnswer + 1') Plus One!
+//- 
+//-   body
+//-       //- .container is from bootstrap to center elements on the page
+//-     .container(ng-init="theList = ['David', 'John', 'Lee']")
+//-       h1 Hi #{username}
+//-       h2 Want to play a game?
+//-       
+//-       .form-group
+//-         label New name
+//-         input(type="text" ng-model="newName" class="form-control")
+//-       button.btn.btn-default(ng-click="theList.push(newName); newName = ''") Add name
+//-       
+//-       
+//-       .form-group
+//-         label filter
+//-         input.form-control(type="text" ng-model="nameFilter")
+//-         
+//-       ul
+//-         li(ng-repeat="name in theList | filter:nameFilter track by $index") 
+//-           {{ name }}
+//-       
+//-             //- div.form-group is implied
+//-             //- 
+//-       //- 
+//-       //- ul
+//-       //-   li(ng-repeat="name in theList track by $index") 
+//-       //-     {{ name }}
+//-       //-   //- li is a list tag; ng-repeat repeats the command as many time as the list is long; name is a variable;
+//-         //- in tells it to use theList as the list 
+//-         //- track by $index allows you to add the same value to the list more than once; by default you can't
+
+doctype html
+html(lang="en" ng-app="bewd.tictactoe.board")
+  head
+    include ./includes/bower_bootstrap.jade
+    title Welcome #{username}
+  body
+    tic-tac-toe-board(the-board="[['_', '_', '_'], ['_', '_', '_'], ['_', '_', '_']]")
+    tic-tac-toe-board(the-board="[[' ', ' ', ' '], ['O', 'O', 'X'], ['O', 'X', '']]")
+    
+    //- This is from bootstrap, for center-ish-ing
+    //- .container(ng-init="theList = ['David', 'John', 'Lee']; theAnswer = 47 - 5")
+    //-   h1 Hi #{username}
+    //-   h2 Want to play a game?
+    //- 
+    //-   p The answer is {{ theAnswer }}
+    //-   
+    //-   form(ng-submit="theList.push(newName); newName = ''")
+    //-     div.form-group
+    //-       label New name
+    //-       input.form-control(type="text" ng-model="newName")
+    //-     button.btn.btn-default(type="submit") Add name
+    //-   
+    //-   .form-group
+    //-     label Filter
+    //-     input.form-control(type="text" ng-model="nameFilter")
+    //-   
+    //-   ul
+    //-     li(ng-repeat="name in theList | filter:nameFilter track by $index")
+    //-       {{ name }}
+          
+  

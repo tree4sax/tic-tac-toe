@@ -1,0 +1,31 @@
+// var boardState = [ ['X', 'O', 'X'],
+//   [ '', 'X', 'O'],
+//   [ '', 'O', ''] ];
+//
+// var initialBoard = [ [ '', '', ''], ['', '', ''], ['', '', '']];
+//
+//   function updateBoard(board) {
+//     board[2][1] = 'O';
+//
+//     return board;
+//   }
+//
+//   function isWinningBoard(board) {
+//      return true;
+//   }
+//
+//   function whoWon(board) {
+//
+//   }
+
+doctype html
+html(ng-app)
+  head
+    include ./includes/bower_bootstrap.jade
+    title TicTacToe!
+  body
+    h1 TicTacToe
+
+    form(name="ttt", action="/moves")
+      input(type="text", name="move")
+      input(type="submit")
